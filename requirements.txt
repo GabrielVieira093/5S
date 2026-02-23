@@ -1,4 +1,5 @@
-smartsheet-python-sdk
+streamlit>=1.35.0
+altair<6
 pandas
 plotly
-streamlit
+smartsheet-python-sdk
