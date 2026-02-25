@@ -20,7 +20,7 @@ def check_password():
     if "password_correct" not in st.session_state:
         col1, col2, col3 = st.columns([1, 2, 1])
         with col2:
-            st.write("# 🔐 Acesso Restrito")
+            st.write("#Acesso Restrito")
             with st.form("login_form"):
                 user_input = st.text_input("Usuário ou E-mail")
                 password_input = st.text_input("Senha", type="password")
@@ -33,9 +33,9 @@ def check_password():
                             st.session_state["password_correct"] = True
                             st.rerun()
                         else:
-                            st.error("😕 Usuário ou senha incorretos.")
+                            st.error("Usuário ou senha incorretos.")
                     except KeyError:
-                        st.error("⚠️ Configuração de 'usuarios' não encontrada nos Secrets.")
+                        st.error("Configuração de 'usuarios' não encontrada nos Secrets.")
         return False
     return True
 
@@ -126,7 +126,7 @@ if check_password():
             st.stop()
 
         # --- MÉTRICAS GERAIS ---
-        st.title("📊 Dashboard de Auditoria 5S")
+        st.title("Dashboard de Auditoria 5S")
         nota_media = df_plot['Nota'].mean()
         total_ncs = df_plot[col_ncs_lista].sum().sum()
 
@@ -190,7 +190,7 @@ if check_password():
 
         # --- TABELA ---
         st.markdown("---")
-        st.subheader("📋 Detalhamento das Auditorias")
+        st.subheader("Detalhamento das Auditorias")
         with st.expander("Clique para visualizar os dados brutos"):
             df_display = df_plot.copy()
             df_display['Data'] = df_display['Data'].dt.strftime('%d/%m/%Y')
@@ -200,4 +200,5 @@ if check_password():
         st.error(f"Erro ao processar dados: {e}")
 
     st.sidebar.markdown("---")
-    st.sidebar.caption("Dashboard v3.1 | Technorodas")
+
+    st.sidebar.caption("Dashboard v3.1 | Schumann")
